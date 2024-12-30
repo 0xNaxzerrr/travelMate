@@ -6,6 +6,8 @@ import { AuthModule } from './auth/auth.module';
 import { TravelsModule } from './travels/travels.module';
 import { ItinerariesModule } from './itineraries/itineraries.module';
 import { BudgetsModule } from './budgets/budgets.module';
+import { ActivitiesModule } from './activities/activities.module';
+import { LocalInfoModule } from './local-info/local-info.module';
 
 @Module({
   imports: [
@@ -15,7 +17,9 @@ import { BudgetsModule } from './budgets/budgets.module';
     AuthModule,
     TravelsModule,
     ItinerariesModule,
-    BudgetsModule
+    BudgetsModule,
+    ActivitiesModule,
+    LocalInfoModule
   ],
   controllers: [],
   providers: [],
