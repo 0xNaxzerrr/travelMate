@@ -1,1 +1,36 @@
-import { Module } from '@nestjs/common';\nimport { ConfigModule } from '@nestjs/config';\nimport { MongooseModule } from '@nestjs/mongoose';\nimport { UsersModule } from './users/users.module';\nimport { AuthModule } from './auth/auth.module';\nimport { TravelsModule } from './travels/travels.module';\nimport { ItinerariesModule } from './itineraries/itineraries.module';\nimport { BudgetsModule } from './budgets/budgets.module';\nimport { ActivitiesModule } from './activities/activities.module';\nimport { LocalInfoModule } from './local-info/local-info.module';\nimport { TravelSharingModule } from './travel-sharing/travel-sharing.module';\nimport { RecommendationsModule } from './recommendations/recommendations.module';\nimport { VoyageStatsModule } from './voyage-stats/voyage-stats.module';\nimport { GeolocationModule } from './geolocation/geolocation.module';\n\n@Module({\n  imports: [\n    ConfigModule.forRoot({\n      isGlobal: true,\n      envFilePath: '.env'\n    }),\n    MongooseModule.forRoot(process.env.MONGODB_URI || ''),\n    UsersModule,\n    AuthModule,\n    TravelsModule,\n    ItinerariesModule,\n    BudgetsModule,\n    ActivitiesModule,\n    LocalInfoModule,\n    TravelSharingModule,\n    RecommendationsModule,\n    VoyageStatsModule,\n    GeolocationModule\n  ],\n  controllers: [],\n  providers: [],\n})\nexport class AppModule {}
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { MongooseModule } from '@nestjs/mongoose';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
+import { TravelsModule } from './travels/travels.module';
+import { ItinerariesModule } from './itineraries/itineraries.module';
+import { BudgetsModule } from './budgets/budgets.module';
+import { ActivitiesModule } from './activities/activities.module';
+import { LocalInfoModule } from './local-info/local-info.module';
+import { TravelSharingModule } from './travel-sharing/travel-sharing.module';
+import { RecommendationsModule } from './recommendations/recommendations.module';
+import { VoyageStatsModule } from './voyage-stats/voyage-stats.module';
+
+@Module({
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env'
+    }),
+    MongooseModule.forRoot(process.env.MONGODB_URI || ''),
+    UsersModule,
+    AuthModule,
+    TravelsModule,
+    ItinerariesModule,
+    BudgetsModule,
+    ActivitiesModule,
+    LocalInfoModule,
+    TravelSharingModule,
+    RecommendationsModule,
+    VoyageStatsModule
+  ],
+  controllers: [],
+  providers: [],
+})
+export class AppModule {}
