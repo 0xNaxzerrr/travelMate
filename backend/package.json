@@ -7,7 +7,7 @@
     "start:dev": "nest start --watch",
     "build": "nest build",
     "test": "jest",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts"
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\""
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
@@ -16,7 +16,9 @@
     "@nestjs/passport": "^9.0.0",
     "@nestjs/jwt": "^9.0.0",
     "@nestjs/swagger": "^6.1.4",
+    "@nestjs/config": "^2.2.0",
     "mongoose": "^6.7.2",
+    "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "bcrypt": "^5.0.1",
@@ -29,6 +31,7 @@
     "@nestjs/testing": "^9.0.0",
     "@types/bcrypt": "^5.0.0",
     "@types/passport-jwt": "^3.0.6",
+    "@types/passport-local": "^1.0.34",
     "typescript": "^4.7.4"
   }
 }
