@@ -13,37 +13,27 @@ export enum TravelStatus {
 export class Travel extends Document {
   @ApiProperty()
   @Prop({ required: true })
-  titre: string;
+  titre: string = '';
 
   @ApiProperty()
   @Prop({ required: true })
-  destination: string;
+  destination: string = '';
 
   @ApiProperty()
   @Prop({ type: Date, required: true })
-  dateDebut: Date;
+  dateDebut: Date = new Date();
 
   @ApiProperty()
   @Prop({ type: Date, required: true })
-  dateFin: Date;
+  dateFin: Date = new Date();
 
   @ApiProperty()
   @Prop({ enum: TravelStatus, default: TravelStatus.PLANNED })
-  statut: TravelStatus;
+  statut: TravelStatus = TravelStatus.PLANNED;
 
   @ApiProperty()
   @Prop({ type: MongoSchema.Types.ObjectId, ref: 'User', required: true })
   utilisateur: User;
-
-  @ApiProperty()
-  @Prop()
-  budget?: number;
-
-  @ApiProperty()
-  @Prop([String])
-  activitesPrevues?: string[];
-
-  @ApiProperty()
-  @Prop()
-  notePersonnelle?: string;
 }
+
+export const TravelSchema = SchemaFactory.createForClass(Travel);
