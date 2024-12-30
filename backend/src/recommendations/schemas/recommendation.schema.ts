@@ -38,8 +38,20 @@ export class Recommendation extends Document {
   score?: number;
 
   @ApiProperty()
-  @Prop()
-  metadonneesExterne?: Record<string, any>;
+  @Prop({
+    type: {
+      source: { type: String },
+      dateCreation: { type: Date },
+      score: { type: Number },
+      // ajoutez d'autres champs selon vos besoins
+    }
+  })
+  metadonneesExterne: {
+    source: string;
+    dateCreation: Date;
+    score: number;
+    // ... autres champs nécessaires
+  };
 }
 
 export const RecommendationSchema = SchemaFactory.createForClass(Recommendation);

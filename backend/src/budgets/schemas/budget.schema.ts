@@ -12,8 +12,8 @@ export enum CategoryBudget {
   AUTRE = 'autre'
 }
 
-@Schema({ timestamps: true })
-export class BudgetEntry extends Document {
+@Schema()
+export class BudgetEntry {
   @ApiProperty()
   @Prop({ required: true })
   description: string;
@@ -23,13 +23,16 @@ export class BudgetEntry extends Document {
   montant: number;
 
   @ApiProperty()
-  @Prop({ enum: CategoryBudget, default: CategoryBudget.AUTRE })
-  categorie: CategoryBudget;
+  @Prop({ required: true })
+  date: Date;
 
   @ApiProperty()
-  @Prop({ type: Date, default: Date.now })
-  date: Date;
+  @Prop()
+  categorie?: string;
 }
+
+const BudgetEntrySchema = SchemaFactory.createForClass(BudgetEntry);
+export { BudgetEntrySchema };
 
 @Schema({ timestamps: true })
 export class Budget extends Document {
@@ -42,7 +45,7 @@ export class Budget extends Document {
   budgetTotal: number;
 
   @ApiProperty()
-  @Prop({ type: [BudgetEntry], default: [] })
+  @Prop({ type: [BudgetEntrySchema] })
   depenses: BudgetEntry[];
 
   @ApiProperty()
@@ -61,4 +64,3 @@ export class Budget extends Document {
 }
 
 export const BudgetSchema = SchemaFactory.createForClass(Budget);
-export const BudgetEntrySchema = SchemaFactory.createForClass(BudgetEntry);

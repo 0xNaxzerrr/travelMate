@@ -11,8 +11,8 @@ export enum TransportMode {
   WALKING = 'walking'
 }
 
-@Schema({ timestamps: true })
-export class ItineraryStep extends Document {
+@Schema()
+export class ItineraryStep {
   @ApiProperty()
   @Prop({ required: true })
   lieu: string;
@@ -34,12 +34,17 @@ export class ItineraryStep extends Document {
   description?: string;
 
   @ApiProperty()
-  @Prop()
-  coordonnees?: {
-    latitude: number;
-    longitude: number;
-  };
+  @Prop({ 
+    type: {
+      latitude: { type: Number },
+      longitude: { type: Number }
+    }
+  })
+  coordonnees: { latitude: number; longitude: number };
 }
+
+const ItineraryStepSchema = SchemaFactory.createForClass(ItineraryStep);
+export { ItineraryStepSchema };
 
 @Schema({ timestamps: true })
 export class Itinerary extends Document {
@@ -48,7 +53,7 @@ export class Itinerary extends Document {
   voyage: Travel;
 
   @ApiProperty()
-  @Prop({ type: [ItineraryStep], default: [] })
+  @Prop({ type: [ItineraryStepSchema] })
   etapes: ItineraryStep[];
 
   @ApiProperty()
@@ -57,4 +62,3 @@ export class Itinerary extends Document {
 }
 
 export const ItinerarySchema = SchemaFactory.createForClass(Itinerary);
-export const ItineraryStepSchema = SchemaFactory.createForClass(ItineraryStep);

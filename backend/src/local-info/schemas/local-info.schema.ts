@@ -46,8 +46,21 @@ export class LocalInfo extends Document {
   alerteSecurite?: string;
 
   @ApiProperty()
-  @Prop()
-  metadonneesExterne?: Record<string, any>;
+  @Prop({
+    type: {
+      temperature: { type: Number },
+      meteo: { type: String },
+      fuseauHoraire: { type: String },
+      // ajoutez ici tous les champs de metadonneesExterne
+      // avec leurs types respectifs
+    }
+  })
+  metadonneesExterne: {
+    temperature: number;
+    meteo: string;
+    fuseauHoraire: string;
+    // ... autres champs
+  };
 }
 
 export const LocalInfoSchema = SchemaFactory.createForClass(LocalInfo);

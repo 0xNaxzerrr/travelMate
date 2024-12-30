@@ -4,9 +4,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { GeolocationService } from './geolocation.service';
 import { GeolocationController } from './geolocation.controller';
 import { Geolocation, GeolocationSchema } from './schemas/geolocation.schema';
-import { DistanceCalculatorService } from './distance-calculator.service';
-import { RouteCalculatorService } from './route-calculator.service';
-import { TravelZoneService } from './travel-zone.service';
 
 @Module({
   imports: [
@@ -14,17 +11,7 @@ import { TravelZoneService } from './travel-zone.service';
     MongooseModule.forFeature([{ name: Geolocation.name, schema: GeolocationSchema }])
   ],
   controllers: [GeolocationController],
-  providers: [
-    GeolocationService, 
-    DistanceCalculatorService,
-    RouteCalculatorService,
-    TravelZoneService
-  ],
-  exports: [
-    GeolocationService, 
-    DistanceCalculatorService,
-    RouteCalculatorService,
-    TravelZoneService
-  ]
+  providers: [GeolocationService],
+  exports: [GeolocationService]
 })
 export class GeolocationModule {}
