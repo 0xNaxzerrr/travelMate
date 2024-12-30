@@ -1,71 +1,76 @@
-# 🌍 TravelMate - Votre Compagnon de Voyage Intelligent
+# TravelMate 🌍✈️
 
-## 📌 Présentation du Projet
+## Description du Projet
 
-TravelMate est une application révolutionnaire conçue pour simplifier et enrichir vos expériences de voyage. Avec l'intelligence artificielle comme pilier, nous transformons la planification et la documentation des voyages.
+TravelMate est une application mobile et web innovante qui révolutionne la façon dont vous planifiez, documentez et vivez vos voyages. Avec des fonctionnalités alimentées par l'intelligence artificielle, TravelMate devient votre compagnon de voyage ultime.
 
-## 🚀 Fonctionnalités Principales
+## Fonctionnalités Principales
 
-- 📅 Planification de voyage personnalisée
+- 📋 Planification de voyage personnalisée
 - 🗺️ Génération d'itinéraires intelligents
-- 💰 Suivi budgétaire
-- 📸 Documentation de voyage
+- 💰 Suivi budgétaire détaillé
+- 📸 Documentation de voyage géolocalisée
 - 🌐 Recommandations contextuelles
+- 🤝 Partage de voyages
+- 📊 Statistiques de voyage
 
-## 🛠️ Stack Technique
+## Technologies Utilisées
 
-- **Backend**: NestJS (Node.js)
-- **Base de données**: MongoDB
-- **Authentification**: Passport.js
-- **IA**: OpenAI
-- **Déploiement**: Serverless
+### Backend
+- NestJS (Node.js)
+- TypeScript
+- MongoDB
+- Mongoose
+- Swagger
 
-## 🏁 Démarrage Rapide
+### Frontend Mobile
+- React Native
+- Expo
+- TypeScript
+
+### Services Externes
+- OpenAI (Recommandations)
+- Services météo
+- Services de géolocalisation
+
+## Installation
 
 ### Prérequis
-
 - Node.js (v16+)
 - MongoDB
 - Compte OpenAI (optionnel)
 
-### Installation
-
-1. Clonez le repository
+### Backend
 ```bash
-git clone https://github.com/0xNaxzerrr/travelMate.git
-cd travelMate/backend
-```
-
-2. Installez les dépendances
-```bash
+cd backend
 npm install
-```
-
-3. Configurez les variables d'environnement
-```bash
 cp .env.example .env
-# Éditez le .env avec vos configurations
-```
-
-4. Lancez l'application
-```bash
+# Configurez votre .env
 npm run start:dev
 ```
 
-## 📖 Documentation
+### Frontend Mobile
+```bash
+cd mobile
+npm install
+npm start
+```
 
-La documentation complète est disponible dans le dossier `docs/`.
+## Documentation
 
-## 🤝 Contribution
+- [Documentation Technique](docs/TECH.md)
+- [Guide de Contribution](CONTRIBUTING.md)
+- [Politique de Confidentialité](PRIVACY.md)
 
-Consultez `CONTRIBUTING.md` pour les détails sur notre processus de contribution.
+## Contribution
 
-## 📄 Licence
+Les contributions sont les bienvenues ! Veuillez lire notre [guide de contribution](CONTRIBUTING.md).
+
+## Licence
 
 Ce projet est sous licence MIT.
 
-## 🔗 Contacts
+## Contact
 
-- Créateur : [Votre Nom]
-- Email : contact@travelmate.app
-- Twitter : @TravelMateApp
+- Email: contact@travelmate.app
+- Twitter: @TravelMateApp
