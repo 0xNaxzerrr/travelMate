@@ -11,6 +11,7 @@ import { LocalInfoModule } from './local-info/local-info.module';
 import { TravelSharingModule } from './travel-sharing/travel-sharing.module';
 import { RecommendationsModule } from './recommendations/recommendations.module';
 import { VoyageStatsModule } from './voyage-stats/voyage-stats.module';
+import { GeolocationModule } from './geolocation/geolocation.module';
 
 @Module({
   imports: [
@@ -28,7 +29,8 @@ import { VoyageStatsModule } from './voyage-stats/voyage-stats.module';
     LocalInfoModule,
     TravelSharingModule,
     RecommendationsModule,
-    VoyageStatsModule
+    VoyageStatsModule,
+    GeolocationModule
   ],
   controllers: [],
   providers: [],
