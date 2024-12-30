@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { TravelsModule } from './travels/travels.module';
 import { ItinerariesModule } from './itineraries/itineraries.module';
+import { BudgetsModule } from './budgets/budgets.module';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { ItinerariesModule } from './itineraries/itineraries.module';
     UsersModule,
     AuthModule,
     TravelsModule,
-    ItinerariesModule
+    ItinerariesModule,
+    BudgetsModule
   ],
   controllers: [],
   providers: [],
