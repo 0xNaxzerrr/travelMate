@@ -1,0 +1,27 @@
+{
+  "name": "travelmate-backend",
+  "version": "0.1.0",
+  "description": "Backend intelligent pour l'application TravelMate",
+  "scripts": {
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "build": "nest build",
+    "test": "jest",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.0.0",
+    "@nestjs/core": "^9.0.0",
+    "@nestjs/mongoose": "^9.2.1",
+    "@nestjs/passport": "^9.0.0",
+    "@nestjs/swagger": "^6.1.4",
+    "mongoose": "^6.7.2",
+    "passport-jwt": "^4.0.0",
+    "rxjs": "^7.5.5"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^9.0.0",
+    "@nestjs/testing": "^9.0.0",
+    "typescript": "^4.7.4"
+  }
+}
